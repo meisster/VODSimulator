@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.materialicons.MaterialIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.BoxBlur?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="stackPane" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="netflix.gui.LoginController">
+   <children>
+      <AnchorPane fx:id="anchorPane" focusTraversable="true" prefHeight="402.0" prefWidth="582.0" style="-fx-background-color: #1E1E2E;">
+         <children>
+            <Label focusTraversable="false" layoutX="117.0" layoutY="279.0" onMouseClicked="#showHelp" prefHeight="17.0" prefWidth="139.0" stylesheets="@label.css" text="Forgot your password?" textFill="#868686" />
+            <JFXTextField fx:id="loginText" focusColor="#b20710" labelFloat="true" layoutX="152.0" layoutY="118.0" prefHeight="25.0" prefWidth="259.0" promptText="Login" style="-fx-text-fill: #b8b8b8;" unFocusColor="#868686" AnchorPane.bottomAnchor="259.0" AnchorPane.leftAnchor="152.0" AnchorPane.rightAnchor="117.0" AnchorPane.topAnchor="118.0">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+            </JFXTextField>
+            <JFXPasswordField fx:id="passwordText" focusColor="#b20710" labelFloat="true" layoutX="152.0" layoutY="176.0" onKeyReleased="#enterLogin" prefHeight="25.0" prefWidth="259.0" promptText="Password" style="-fx-text-fill: #b8b8b8;" unFocusColor="#868686" AnchorPane.bottomAnchor="201.0" AnchorPane.leftAnchor="152.0" AnchorPane.rightAnchor="117.0">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+            </JFXPasswordField>
+            <MaterialIconView fill="#c9c9c9" glyphName="ACCOUNT_BOX" layoutX="123.0" layoutY="141.0" size="20" wrappingWidth="27.99999749660492" />
+            <MaterialIconView fill="#c9c9c9" glyphName="ENHANCED_ENCRYPTION" layoutX="123.0" layoutY="198.0" size="20" AnchorPane.leftAnchor="123.0" />
+            <JFXButton fx:id="loginButton" buttonType="RAISED" focusTraversable="false" layoutX="381.0" layoutY="244.0" onAction="#handleLogin" prefHeight="35.0" prefWidth="84.0" ripplerFill="BLACK" style="-fx-background-color: #b20710;" text="Login" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic" size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXCheckBox fx:id="rememberMe" checkedColor="#b20710" layoutX="117.0" layoutY="243.0" prefHeight="18.0" prefWidth="114.0" text="Remember me" textFill="#b8b8b8">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+            </JFXCheckBox>
+            <Label fx:id="statusLabel" layoutX="137.0" layoutY="209.0" prefHeight="17.0" prefWidth="270.0" text="Wrong username or password!" textFill="#b20710" visible="false">
+               <graphic>
+                  <MaterialIconView fx:id="statusIcon" fill="#b20710" glyphName="ERROR" size="20" />
+               </graphic>
+            </Label>
+            <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="208.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@netflixlogoinv.png" />
+               </image>
+               <effect>
+                  <BoxBlur height="2.5" width="1.2" />
+               </effect>
+            </ImageView>
+            <Label layoutX="227.0" layoutY="27.0" prefHeight="45.0" prefWidth="58.0" text="OT" textFill="#b8b8b8">
+               <font>
+                  <Font name="Century Gothic Bold" size="35.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="285.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@netflixlogoinv.png" />
+               </image>
+               <effect>
+                  <BoxBlur height="2.5" width="1.2" />
+               </effect>
+            </ImageView>
+            <Label layoutX="304.0" layoutY="27.0" prefHeight="46.0" prefWidth="104.0" text="ETFLIX" textFill="#b8b8b8">
+               <font>
+                  <Font name="Century Gothic Bold" size="35.0" />
+               </font>
+            </Label>
+            <Label layoutX="262.0" layoutY="67.0" prefHeight="46.0" prefWidth="66.0" text="LOGIN" textFill="#b8b8b8">
+               <font>
+                  <Font name="Century Gothic" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

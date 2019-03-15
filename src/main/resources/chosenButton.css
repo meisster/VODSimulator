@@ -1,0 +1,17 @@
+.button {
+    -fx-background-color: #181E2F;
+    -fx-text-fill: white;
+    -jfx-button-type: RAISED;
+    -fx-font-smoothing-type: gray;
+}
+
+.button:hover {
+    -fx-background-color: #181E2F;
+}
+
+.button:pressed {
+    -fx-background-color: #181E2F;
+}
+.text{
+    -fx-font-smoothing-type: gray;
+}

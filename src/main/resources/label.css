@@ -1,0 +1,13 @@
+.label:hover{
+    -fx-font-smoothing-type: gray;
+    -fx-font-family: "Century Gothic";
+    -fx-text-fill: #7F7F84;
+    -fx-font-weight: bold;
+    -fx-underline: true;
+    -fx-cursor: hand;
+}
+.label{
+    -fx-font-smoothing-type: gray;
+    -fx-font-family: "Century Gothic";
+    -fx-text-fill: #7F7F84;
+}

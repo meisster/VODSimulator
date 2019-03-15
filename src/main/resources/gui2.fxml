@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXProgressBar?>
+<?import com.jfoenix.controls.JFXSlider?>
+<?import com.jfoenix.controls.JFXSpinner?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXToggleButton?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import de.jensd.fx.glyphs.materialicons.MaterialIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.effect.BoxBlur?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.MotionBlur?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="stackPane" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="netflix.gui.Controller">
+   <children>
+      <AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="758.0" prefWidth="1054.0" style="-fx-background-color: #FFFFFF;">
+        <children>
+          <Pane layoutX="289.0" prefHeight="200.0" prefWidth="766.0" style="-fx-background-color: #FFFFFF;">
+            <children>
+              <Label fx:id="labelPath" layoutX="66.0" layoutY="51.0" prefHeight="50.0" prefWidth="276.0" stylesheets="@fullpackstyling.css" text="HOME" textFill="#b20710">
+                <font>
+                  <Font name="Calibri" size="37.0" />
+                </font>
+              </Label>
+                  <Pane layoutX="-6.0" layoutY="-2.0" prefHeight="50.0" prefWidth="772.0" style="-fx-background-color: #FFFFFF;">
+                     <children>
+                        <Label layoutX="448.0" layoutY="16.0" prefHeight="20.0" prefWidth="111.0" text="Signed in as">
+                           <font>
+                              <Font name="Century Gothic" size="16.0" />
+                           </font>
+                        </Label>
+                        <MaterialIconView glyphName="SENTIMENT_VERY_SATISFIED" layoutX="597.0" layoutY="40.0" size="30" />
+                        <Label layoutX="546.0" layoutY="16.0" text="admin" textAlignment="CENTER">
+                           <font>
+                              <Font name="Century Gothic Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <JFXButton layoutX="633.0" layoutY="10.0" minHeight="-Infinity" onAction="#showExitDialog" prefHeight="30.0" prefWidth="133.0" stylesheets="@fullpackstyling.css" text="Sign out">
+                           <font>
+                              <Font name="Century Gothic" size="13.0" />
+                           </font>
+                           <graphic>
+                              <MaterialIconView fill="#ab0000" glyphName="POWER_SETTINGS_NEW" size="30" />
+                           </graphic>
+                        </JFXButton>
+                        <Label fx:id="date" layoutX="14.0" layoutY="11.0" prefHeight="30.0" prefWidth="233.0" text="Label">
+                           <font>
+                              <Font name="Century Gothic" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <effect>
+                        <DropShadow color="#d0d0d0" height="30.0" radius="9.5" width="10.0" />
+                     </effect>
+                  </Pane>
+            <MaterialIconView fx:id="mainIcon" fill="#b20710" glyphName="DOMAIN" layoutY="106.0" size="60" text="" wrappingWidth="86.0" />
+            </children>
+          </Pane>
+          <VBox prefHeight="758.0" prefWidth="287.0">
+            <children>
+              <Pane prefHeight="760.0" prefWidth="287.0" style="-fx-background-color: #FFFFFF;">
+                <children>
+                        <Label layoutX="78.0" layoutY="15.0" prefHeight="50.0" prefWidth="210.0" text="NETFLIX">
+                           <font>
+                              <Font name="Century Gothic Bold" size="30.0" />
+                           </font>
+                           <effect>
+                              <MotionBlur radius="1.3" />
+                           </effect>
+                        </Label>
+                        <Label layoutX="78.0" layoutY="55.0" prefHeight="19.0" prefWidth="158.0" text="Control Panel" textFill="#838383">
+                           <font>
+                              <Font name="Century Gothic" size="14.0" />
+                           </font>
+                           <effect>
+                              <MotionBlur radius="1.3" />
+                           </effect>
+                        </Label>
+                    <JFXButton fx:id="buttonUsers" alignment="CENTER" contentDisplay="CENTER" layoutY="173.0" onAction="#handleClicks" prefHeight="67.0" prefWidth="287.0" ripplerFill="WHITE" stylesheets="@fullpackstyling.css" text="USERS" textFill="#909090">
+                      <graphic>
+                        <MaterialIconView fx:id="userIcon" fill="#b20710" glyphName="ACCOUNT_CIRCLE" size="30.0" wrappingWidth="200.0" />
+                      </graphic>
+                           <font>
+                              <Font name="Century Gothic" size="25.0" />
+                           </font>
+                    </JFXButton>
+                    <JFXButton fx:id="buttonHome" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" layoutY="106.0" onAction="#handleClicks" prefHeight="67.0" prefWidth="287.0" ripplerFill="WHITE" stylesheets="@fullpackstyling.css" text=" HOME" textFill="#909090">
+                           <font>
+                              <Font name="Century Gothic" size="25.0" />
+                           </font>
+                           <effect>
+                              <MotionBlur radius="3.0" />
+                           </effect>
+                           <graphic>
+                        <MaterialIconView fx:id="homeIcon" fill="#b20710" glyphName="HOME" size="30.0" textOrigin="CENTER" wrappingWidth="200.0" />
+                           </graphic>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                    </JFXButton>
+                    <JFXButton fx:id="buttonAll" alignment="CENTER" contentDisplay="CENTER" layoutX="-1.0" layoutY="240.0" onAction="#handleClicks" prefHeight="67.0" prefWidth="287.0" ripplerFill="WHITE" stylesheets="@fullpackstyling.css" text="         PRODUCTS" textFill="#909090">
+                      <graphic>
+                        <MaterialIconView fx:id="productIcon" fill="#b20710" glyphName="DASHBOARD" size="30.0" wrappingWidth="200.0" />
+                      </graphic>
+                           <font>
+                              <Font name="Century Gothic" size="25.0" />
+                           </font>
+                    </JFXButton>
+                    <JFXButton fx:id="buttonControlPanel" alignment="CENTER" contentDisplay="CENTER" layoutX="-1.0" layoutY="307.0" onAction="#handleClicks" prefHeight="67.0" prefWidth="287.0" ripplerFill="WHITE" stylesheets="@fullpackstyling.css" text="             DISTRIBUTORS" textFill="#909090">
+                      <graphic>
+                        <MaterialIconView fx:id="chartIcon" fill="#b20710" glyphName="ASSESSMENT" size="30.0" text="" wrappingWidth="200.0" />
+                      </graphic>
+                           <font>
+                              <Font name="Century Gothic" size="25.0" />
+                           </font>
+                    </JFXButton>
+                    <JFXButton fx:id="buttonSettings" alignment="CENTER" contentDisplay="CENTER" layoutX="-1.0" layoutY="374.0" onAction="#handleClicks" prefHeight="67.0" prefWidth="287.0" ripplerFill="WHITE" stylesheets="@fullpackstyling.css" text="     SETTINGS" textFill="#909090">
+                      <graphic>
+                        <MaterialIconView fx:id="settingsIcon" fill="#b20710" glyphName="SETTINGS" size="30.0" wrappingWidth="200.0" />
+                      </graphic>
+                           <font>
+                              <Font name="Century Gothic" size="25.0" />
+                           </font>
+                    </JFXButton>
+                        <Separator layoutX="27.0" layoutY="82.0" prefHeight="1.0" prefWidth="233.0" />
+                        <Separator layoutX="120.0" layoutY="449.0" prefHeight="1.0" prefWidth="140.0" />
+                        <Label layoutX="14.0" layoutY="441.0" prefHeight="18.0" prefWidth="111.0" text="INFORMATIONS" textFill="#c4c4c4">
+                           <font>
+                              <Font name="Century Gothic Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="19.0" layoutY="561.0" prefHeight="17.0" prefWidth="102.0" text="SETTINGS" textFill="#c4c4c4">
+                           <font>
+                              <Font name="Century Gothic Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Separator layoutX="93.0" layoutY="569.0" prefHeight="1.0" prefWidth="179.0" />
+                        <JFXProgressBar fx:id="timeProgress" layoutX="128.0" layoutY="510.0" prefHeight="2.0" prefWidth="111.0" progress="0.0" />
+                        <JFXSpinner fx:id="spinner" layoutX="137.0" layoutY="517.0" prefHeight="37.0" prefWidth="42.0" visible="false" />
+                        <Label layoutX="22.0" layoutY="493.0" prefHeight="18.0" prefWidth="111.0" text="TIME ELAPSED" textFill="#c4c4c4">
+                           <font>
+                              <Font name="Century Gothic" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="22.0" layoutY="526.0" prefHeight="18.0" prefWidth="111.0" text="SIMULATION" textFill="#c4c4c4">
+                           <font>
+                              <Font name="Century Gothic" size="14.0" />
+                           </font>
+                        </Label>
+                        <JFXToggleButton fx:id="simulationToggle" disable="true" layoutX="-1.0" layoutY="585.0" onAction="#handleClicks" prefHeight="50.0" prefWidth="158.0" style="-fx-background-radius: 25;" text="Simulation On" textFill="#686868" toggleColor="#941a00" toggleLineColor="#ff170b">
+                           <font>
+                              <Font name="Century Gothic" size="12.0" />
+                           </font>
+                        </JFXToggleButton>
+                        <JFXButton fx:id="buttonReloadTable" layoutX="9.0" layoutY="635.0" onAction="#handleTable" prefHeight="30.0" prefWidth="192.0" ripplerFill="#9f1d03" stylesheets="@fullpackstyling.css" text="Reload Table" textFill="#686868" visible="false">
+                           <font>
+                              <Font name="Century Gothic" size="14.0" />
+                           </font>
+                           <graphic>
+                              <MaterialIconView fill="#b20710" glyphName="REFRESH" size="30" wrappingWidth="57.20001220703125" />
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="distributorButton" alignment="CENTER" contentDisplay="CENTER" layoutX="4.0" layoutY="643.0" onAction="#addDistributor" prefHeight="50.0" prefWidth="200.0" ripplerFill="WHITE" style="-fx-background-radius: 25;" stylesheets="@fullpackstyling.css" text="          Add Distributor" textFill="#686868">
+                           <font>
+                              <Font name="Century Gothic" size="14.0" />
+                           </font>
+                           <graphic>
+                              <MaterialIconView fill="#b20710" glyphName="ADD_CIRCLE_OUTLINE" size="30" text="" wrappingWidth="182.80000686645508" />
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="userButton" alignment="CENTER" contentDisplay="CENTER" layoutX="5.0" layoutY="693.0" onAction="#addUser" prefHeight="50.0" prefWidth="200.0" ripplerFill="WHITE" style="-fx-background-radius: 25;" stylesheets="@fullpackstyling.css" text="Add User" textFill="#686868">
+                           <font>
+                              <Font name="Century Gothic" size="14.0" />
+                           </font>
+                           <graphic>
+                              <MaterialIconView fill="#b20710" glyphName="ADD" size="30" text="" wrappingWidth="180.40001678466797" />
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="netflixButton" alignment="CENTER" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" defaultButton="true" layoutX="22.0" layoutY="9.0" prefHeight="60.0" prefWidth="30.0" ripplerFill="#bcbcbc">
+                           <graphic>
+                              <ImageView fitHeight="67.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@netflixlogoinv.png" />
+                                 </image>
+                                 <effect>
+                                    <BoxBlur height="3.0" width="1.0" />
+                                 </effect>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                        <MaterialIconView fx:id="simulationDone" fill="#00c628" glyphName="DONE" layoutX="137.0" layoutY="555.0" size="40" visible="false" wrappingWidth="42.00001984834671" />
+                        <Label layoutX="23.0" layoutY="466.0" prefHeight="18.0" prefWidth="62.0" text="BUDGET" textFill="#c4c4c4">
+                           <font>
+                              <Font name="Century Gothic" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="budgetLabel" layoutX="94.0" layoutY="467.0" prefHeight="17.0" prefWidth="140.0" text="0$" textFill="#909090">
+                           <font>
+                              <Font name="Century Gothic" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="timeElapsedLabel" layoutX="127.0" layoutY="493.0" prefHeight="18.0" prefWidth="111.0" textFill="#909090">
+                           <font>
+                              <Font name="Century Gothic" size="14.0" />
+                           </font>
+                        </Label>
+                </children>
+                <effect>
+                        <DropShadow color="#c9c5c5" height="19.4" radius="14.0475" width="38.79" />
+                </effect>
+              </Pane>
+            </children>
+          </VBox>
+            <Pane layoutX="305.0" layoutY="107.0" style="-fx-border-insets: 0 0 0 0; -fx-border-color: #ffffff;">
+               <children>
+                <JFXTabPane fx:id="tabPane" prefHeight="691.0" prefWidth="733.0" side="BOTTOM" style="-fx-background-insets: 0 0 0 0; -fx-border-radius: 0 0 0 0; -fx-background-color: #c4c4c4; -fx-border-color: #FFFFFF;" tabClosingPolicy="UNAVAILABLE">
+                  <tabs>
+                    <Tab style="-fx-background-color: #F3F3F3;" text="home11">
+                      <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="551.0" prefWidth="716.0" style="-fx-background-color: #FFFFFF;">
+                                 <children>
+                                    <Pane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                 </children>
+                        </AnchorPane>
+                      </content>
+                    </Tab>
+                    <Tab style="-fx-background-color: #F3F3F3;" text="home11">
+                      <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="657.0" prefWidth="733.0" style="-fx-background-color: #FFFFFF;">
+                          <children>
+                                    <Pane layoutX="6.0" layoutY="5.0" prefHeight="50.0" prefWidth="721.0" style="-fx-background-color: #F3F3F3; -fx-background-radius: 30;">
+                                       <children>
+                                          <JFXTextField fx:id="userSearchInput" focusColor="#b20710" layoutX="29.0" prefHeight="49.0" prefWidth="664.0" promptText="Search..." style="-fx-background-radius: 30;" unFocusColor="#c4c4c4">
+                                             <font>
+                                                <Font name="Century Gothic" size="14.0" />
+                                             </font>
+                                          </JFXTextField>
+                                          <MaterialIconView fill="#b20710" glyphName="SEARCH" layoutX="1.0" layoutY="43.0" size="30" text="" wrappingWidth="27.0" />
+                                       </children>
+                                       <effect>
+                                          <DropShadow color="#909090" height="5.5" radius="2.125" width="5.0" />
+                                       </effect>
+                                    </Pane>
+                                    <Pane layoutX="15.0" layoutY="67.0" prefHeight="572.0" prefWidth="703.0" style="-fx-background-color: #FFFFFF;">
+                                       <children>
+                                  <JFXTreeTableView fx:id="userTreeTableView" prefHeight="567.0" prefWidth="703.0" style="-fx-background-insets: 5 5 5 5;">
+                                             <columnResizePolicy>
+                                                <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                             </columnResizePolicy>
+                                             <columns>
+                                                <TreeTableColumn editable="false" prefWidth="75.0" text="User ID" />
+                                                <TreeTableColumn prefWidth="75.0" text="Subscription" />
+                                                <TreeTableColumn prefWidth="75.0" text="Birthday" />
+                                                <TreeTableColumn prefWidth="75.0" text="E-mail" />
+                                                <TreeTableColumn prefWidth="75.0" text="Credit Card" />
+                                             </columns>
+                                  </JFXTreeTableView>
+                                       </children>
+                                       <effect>
+                                          <DropShadow height="5.0" radius="2.0" width="5.0" />
+                                       </effect>
+                                    </Pane>
+                          </children>
+                                 <effect>
+                                    <DropShadow height="62.51" radius="30.755" spread="0.63" width="62.51" />
+                                 </effect>
+                        </AnchorPane>
+                      </content>
+                    </Tab>
+                    <Tab style="-fx-background-color: #F3F3F3;" text="home11">
+                      <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
+                                 <children>
+                                    <Pane layoutX="19.0" layoutY="73.0" prefHeight="557.0" prefWidth="700.0" style="-fx-background-color: #FFFFFF;">
+                                       <children>
+                                          <JFXTreeTableView fx:id="productTreeTableView" layoutY="-1.0" prefHeight="558.0" prefWidth="700.0">
+                                             <columns>
+                                                <TreeTableColumn fx:id="productColumn" prefWidth="112.0" text="Product Type" />
+                                                <TreeTableColumn fx:id="titleColumn" prefWidth="259.0" text="Title" />
+                                                <TreeTableColumn fx:id="ratingColumn" prefWidth="68.0" text="Rating" />
+                                                <TreeTableColumn fx:id="countryColumn" prefWidth="226.0" text="Country" />
+                                                <TreeTableColumn fx:id="priceColumn" prefWidth="97.0" text="Price" />
+                                             </columns>
+                                             <columnResizePolicy>
+                                                <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                             </columnResizePolicy>
+                                          </JFXTreeTableView>
+                                       </children>
+                                       <effect>
+                                          <DropShadow height="5.0" radius="2.0" width="5.0" />
+                                       </effect>
+                                    </Pane>
+                                    <Pane layoutX="6.0" layoutY="12.0" prefHeight="50.0" prefWidth="721.0" style="-fx-background-color: #F3F3F3; -fx-background-radius: 30;">
+                                       <children>
+                                          <JFXTextField fx:id="productSearchInput" focusColor="#b20710" layoutX="53.0" layoutY="1.0" prefHeight="47.0" prefWidth="649.0" promptText="Search..." unFocusColor="#c4c4c4">
+                                             <font>
+                                                <Font name="Century Gothic" size="14.0" />
+                                             </font>
+                                          </JFXTextField>
+                                          <MaterialIconView fill="#b20710" glyphName="SEARCH" layoutX="14.0" layoutY="40.0" size="30" wrappingWidth="38.51124507188797" />
+                                       </children>
+                                       <effect>
+                                          <DropShadow height="5.0" radius="2.0" width="5.0" />
+                                       </effect>
+                                    </Pane>
+                                 </children>
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </AnchorPane>
+                      </content>
+                    </Tab>
+                    <Tab style="-fx-background-color: #FFFFFF;" text="home11">
+                      <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF">
+                                 <children>
+                                    <Pane layoutX="14.0" layoutY="28.0" prefHeight="596.0" prefWidth="704.0" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="28.0">
+                                       <children>
+                                          <JFXTreeTableView fx:id="distributorsTableView" layoutY="-1.0" prefHeight="598.0" prefWidth="704.0">
+                                             <columns>
+                                                <TreeTableColumn fx:id="distNameColumn" prefWidth="112.0" text="Distributor name" />
+                                                <TreeTableColumn fx:id="bankAccountColumn" prefWidth="259.0" text="Bank Account" />
+                                                <TreeTableColumn fx:id="watchCountColumn" prefWidth="68.0" text="Watches" />
+                                                <TreeTableColumn fx:id="watchPriceColumn" prefWidth="226.0" text="Price per Watch" />
+                                             </columns>
+                                             <columnResizePolicy>
+                                                <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                             </columnResizePolicy>
+                                          </JFXTreeTableView>
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </AnchorPane>
+                      </content>
+                    </Tab>
+                    <Tab style="-fx-background-color: #F3F3F3; -fx-background-radius: 30; -fx-border-radius: 30;" text="home11">
+                           <content>
+                              <AnchorPane prefHeight="636.0" prefWidth="731.0" style="-fx-background-color: #F3F3F3;">
+                                 <children>
+                                    <Pane layoutX="204.0" layoutY="87.0" prefHeight="637.0" prefWidth="731.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <Separator layoutX="116.0" layoutY="25.0" prefWidth="200.0" />
+                                          <Label layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="102.0" text="SIMULATION " textFill="#c4c4c4">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <JFXSlider fx:id="simulationSpeed" blockIncrement="5.0" layoutX="65.0" layoutY="54.0" majorTickUnit="1.0" max="10.0" minorTickCount="1" value="1.0" />
+                                          <Label layoutX="14.0" layoutY="51.0" prefHeight="20.0" prefWidth="47.0" text="SPEED" textFill="#c4c4c4">
+                                             <font>
+                                                <Font name="Century Gothic" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <JFXTextField fx:id="usersGenerated" alignment="CENTER" editable="false" focusColor="#b20710" layoutX="123.0" layoutY="76.0" prefHeight="25.0" prefWidth="24.0" text="1" unFocusColor="#c4c4c4">
+                                             <font>
+                                                <Font name="Century Gothic" size="12.0" />
+                                             </font></JFXTextField>
+                                          <Label layoutX="11.0" layoutY="78.0" prefHeight="20.0" prefWidth="77.0" text="GENERATE " textFill="#c4c4c4">
+                                             <font>
+                                                <Font name="Century Gothic" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="182.0" layoutY="78.0" prefHeight="20.0" prefWidth="133.0" text="USERS ON INITIALIZE" textFill="#c4c4c4">
+                                             <font>
+                                                <Font name="Century Gothic" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <JFXToggleButton layoutY="311.0" text="DARK THEME" textFill="#c4c4c4">
+                                             <font>
+                                                <Font name="Century Gothic" size="14.0" />
+                                             </font>
+                                          </JFXToggleButton>
+                                          <Label layoutX="17.0" layoutY="273.0" prefHeight="25.0" prefWidth="102.0" text="GENERAL" textFill="#c4c4c4">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <Separator layoutX="94.0" layoutY="285.0" prefHeight="1.0" prefWidth="219.0" />
+                                          <Label layoutX="11.0" layoutY="134.0" prefHeight="20.0" prefWidth="77.0" text="GENERATE " textFill="#c4c4c4">
+                                             <font>
+                                                <Font name="Century Gothic" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <JFXTextField fx:id="productsGenerated" alignment="CENTER" editable="false" focusColor="#b20710" layoutX="124.0" layoutY="130.0" prefHeight="25.0" prefWidth="23.0" text="1" unFocusColor="#c4c4c4">
+                                             <font>
+                                                <Font name="Century Gothic" size="12.0" />
+                                             </font></JFXTextField>
+                                          <Label layoutX="180.0" layoutY="133.0" prefHeight="20.0" prefWidth="179.0" text="PRODUCTS ON CREATION" textFill="#c4c4c4">
+                                             <font>
+                                                <Font name="Century Gothic" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="17.0" layoutY="381.0" prefHeight="25.0" prefWidth="111.0" text="SUBSCRIPTION" textFill="#c4c4c4">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <Separator layoutX="128.0" layoutY="393.0" prefWidth="200.0" />
+                                          <Label layoutX="26.0" layoutY="417.0" prefHeight="20.0" prefWidth="77.0" text="BASIC" textFill="#c4c4c4">
+                                             <font>
+                                                <Font name="Century Gothic" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="26.0" layoutY="447.0" prefHeight="20.0" prefWidth="77.0" text="FAMILY" textFill="#c4c4c4">
+                                             <font>
+                                                <Font name="Century Gothic" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="26.0" layoutY="479.0" prefHeight="20.0" prefWidth="77.0" text="PREMIUM" textFill="#c4c4c4">
+                                             <font>
+                                                <Font name="Century Gothic" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="basicPriceLabel" alignment="CENTER" layoutX="95.0" layoutY="415.0" prefHeight="25.0" prefWidth="42.0" text="10">
+                                             <font>
+                                                <Font name="Century Gothic" size="12.0" />
+                                             </font></TextField>
+                                          <JFXButton fx:id="buttonInitialize" alignment="CENTER" buttonType="RAISED" layoutX="21.0" layoutY="184.0" onAction="#initializeSimulation" prefHeight="25.0" prefWidth="276.0" style="-fx-background-color: #F3F3F3; -fx-background-radius: 30;" stylesheets="@fullpackstyling.css" text="INITIALIZE" textFill="#909090">
+                                             <font>
+                                                <Font name="Century Gothic" size="14.0" />
+                                             </font>
+                                          </JFXButton>
+                                          <JFXButton fx:id="buttonSave" buttonType="RAISED" layoutX="19.0" layoutY="218.0" onAction="#saveSimulation" prefHeight="28.0" prefWidth="121.0" style="-fx-background-color: #F3F3F3; -fx-background-radius: 20;" text="SAVE" textFill="#909090">
+                                             <font>
+                                                <Font name="Century Gothic" size="14.0" />
+                                             </font>
+                                          </JFXButton>
+                                          <JFXButton fx:id="buttonLoad" buttonType="RAISED" layoutX="177.0" layoutY="218.0" onAction="#loadSimulation" prefHeight="28.0" prefWidth="122.0" style="-fx-background-color: #F3F3F3; -fx-background-radius: 20;" text="LOAD" textFill="#909090">
+                                             <font>
+                                                <Font name="Century Gothic" size="14.0" />
+                                             </font>
+                                          </JFXButton>
+                                          <Label fx:id="userWarning" layoutX="38.0" layoutY="98.0" prefHeight="17.0" prefWidth="200.0" text="Warning, invalid input!" textFill="#ab0000" visible="false">
+                                             <graphic>
+                                                <MaterialIconView fill="#b80000" glyphName="ERROR" size="20" />
+                                             </graphic>
+                                             <font>
+                                                <Font name="Century Gothic" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="productWarning" layoutX="35.0" layoutY="155.0" prefHeight="17.0" prefWidth="200.0" text="Warning, invalid input!" textFill="#970000" visible="false">
+                                             <graphic>
+                                                <MaterialIconView fill="#b80000" glyphName="ERROR" size="20" />
+                                             </graphic>
+                                             <font>
+                                                <Font name="Century Gothic" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <JFXButton fx:id="addProductCount" contentDisplay="GRAPHIC_ONLY" layoutX="139.0" layoutY="127.0" onAction="#addProductCount" prefHeight="33.0" prefWidth="30.0" style="-fx-background-radius: 50;">
+                                             <graphic>
+                                                <MaterialIconView fill="#686868" glyphName="ADD_CIRCLE" size="25" />
+                                             </graphic>
+                                          </JFXButton>
+                                          <JFXButton fx:id="minusProductCount" contentDisplay="GRAPHIC_ONLY" layoutX="89.0" layoutY="127.0" onAction="#minusProductCount" prefHeight="19.0" prefWidth="42.0" style="-fx-background-radius: 50;">
+                                             <graphic>
+                                                <MaterialIconView fill="#686868" glyphName="REMOVE_CIRCLE" size="25" />
+                                             </graphic>
+                                          </JFXButton>
+                                          <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="139.0" layoutY="72.0" onAction="#addUsersCount" prefHeight="33.0" prefWidth="30.0" style="-fx-background-radius: 50;">
+                                             <graphic>
+                                                <MaterialIconView fx:id="addUsersCount" fill="#686868" glyphName="ADD_CIRCLE" size="25" />
+                                             </graphic>
+                                          </JFXButton>
+                                          <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="90.0" layoutY="72.0" onAction="#minusUsersCount" prefHeight="33.0" prefWidth="30.0" style="-fx-background-radius: 50;">
+                                             <graphic>
+                                                <MaterialIconView fill="#686868" glyphName="REMOVE_CIRCLE" size="25" />
+                                             </graphic>
+                                          </JFXButton>
+                                          <JFXButton fx:id="buttonSetPrice" buttonType="RAISED" layoutX="19.0" layoutY="510.0" onAction="#setPrice" prefHeight="28.0" prefWidth="121.0" style="-fx-background-color: #F3F3F3; -fx-background-radius: 20;" text="SET" textFill="#909090">
+                                             <font>
+                                                <Font name="Century Gothic" size="14.0" />
+                                             </font>
+                                          </JFXButton>
+                                          <TextField fx:id="familyPriceLabel" alignment="CENTER" layoutX="95.0" layoutY="445.0" prefHeight="25.0" prefWidth="42.0" text="15">
+                                             <font>
+                                                <Font name="Century Gothic" size="12.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField fx:id="premiumPriceLabel" alignment="CENTER" layoutX="95.0" layoutY="477.0" prefHeight="25.0" prefWidth="42.0" text="20">
+                                             <font>
+                                                <Font name="Century Gothic" size="12.0" />
+                                             </font>
+                                          </TextField>
+                                          <Label layoutX="23.0" layoutY="546.0" prefHeight="20.0" prefWidth="77.0" text="BASIC" textFill="#c4c4c4">
+                                             <font>
+                                                <Font name="Century Gothic" size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                    </Tab>
+                  </tabs>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                </JFXTabPane>
+               </children>
+               <effect>
+                  <DropShadow color="#797979" height="15.0" radius="7.0" width="15.0" />
+               </effect>
+            </Pane>
+        </children>
+      </AnchorPane>
+   </children>
+</StackPane>

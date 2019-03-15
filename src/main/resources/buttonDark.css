@@ -1,0 +1,9 @@
+.button{
+    -fx-background-color: transparent;
+    -fx-font-family: "Century Gothic";
+    -fx-font-size: 14 px;
+    -fx-font-smoothing-type: gray;
+    -fx-text-fill: #b5b6b7;
+    -fx-font-weight: normal;
+
+}
